@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--color-primary: #245e66;
+		--color-secondary: #7bd0db;
+		--color-accent: #259dad;
+		--color-background: #e3f1f2;
+		--color-text: #101c1e;
+		--color-success: #22c55e;
+		--color-warning: #facc15;
+		--color-error: #ef4444;
+		--color-info: #38bdf8;
+	}
+
+	.dark {
+		--color-primary: #7bc0c9;
+		--color-secondary: #1d5f68;
+		--color-accent: #3ebdcf;
+		--color-background: #081314;
+		--color-text: #e0ecee;
+		--color-success: #22c55e;
+		--color-warning: #facc15;
+		--color-error: #ef4444;
+		--color-info: #38bdf8;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+@layer components {
+	.card-base {
+		@apply block p-4 rounded-lg shadow-xs transform transition duration-300 ease-in-out;
+	}
+
+	.card-light {
+		@apply bg-white/80 border border-gray-200;
+	}
+
+	.card-dark {
+		@apply bg-secondary border-gray-700;
+	}
+
+	.card-hover {
+		@apply hover:bg-gray-100 hover:scale-105 hover:shadow-lg;
+	}
+
+	.card-hover-dark {
+		@apply dark:hover:bg-primary;
+	}
+
+	.card-item {
+		@apply mb-2 border-s-2 text-sm pl-2;
+	}
+
+	.card-item-light {
+		@apply border-black;
+	}
+
+	.card-item-hover {
+		@apply hover:border-primary hover:pl-3 transition-all duration-300;
+	}
+
+	.card-title {
+		@apply flex items-center mb-3;
+	}
+
+	.card-icon {
+		@apply text-2xl mr-3 transition-all duration-300;
+	}
+
+	.card-heading {
+		@apply text-xl font-semibold;
+	}
+
+	.skill-badge {
+		@apply bg-secondary text-primary text-xs px-3 py-1 rounded-full transition-all duration-300 ease-in-out;
+	}
+
+	.skill-badge-hover {
+		@apply hover:bg-primary hover:bg-opacity-30 hover:text-white hover:-translate-y-1 hover:shadow-md;
+	}
+
+	/* Navbar avec opacité et ombre */
+	.navbar-glass {
+		@apply fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-background  
+			   dark:bg-background shadow-lg transition-all duration-300
+			   border-b border-gray-400/20 dark:border-gray-400/10;
+	}
+
+	/* Version transparente quand au top de la page */
+	.navbar-transparent {
+		@apply shadow-none;
+	}
+
+	/* Effet lors du défilement */
+	.navbar-scrolled {
+		@apply shadow-xl  border-gray-400/30 dark:border-gray-400/20;
+	}
+
+	.glass-card {
+		background: rgba(29, 95, 104, 0.1);
+		backdrop-filter: blur(8px);
+		border: 1px solid rgba(123, 192, 201, 0.2);
+		box-shadow: 0 4px 16px 0 rgba(29, 95, 104, 0.2); /* Ombre réduite */
+		@apply transition-all duration-300;
+	}
+	.glass-card-light {
+		@apply bg-slate-900/5  border-slate-200/10;
+	}
+
+	.glass-card:hover {
+		border-color: rgba(62, 189, 207, 0.3);
+		box-shadow: 0 4px 16px 0 rgba(62, 189, 207, 0.3); /* Ombre réduite au hover */
+	}
+
+	.section-container {
+		@apply min-h-screen py-8 px-6 scroll-mt-20;
+	}
+
+	.text-justify-tight {
+		text-align: justify;
+		word-spacing: -0.05em;
+		letter-spacing: -0.01em;
+	}
+
+	.form-input {
+		@apply w-full bg-transparent border border-gray-400/20 rounded-lg px-4 py-1
+			   text-white focus:outline-none focus:border-primary focus:ring-1 
+			   focus:ring-primary transition-colors;
+	}
+
+	.nav-link {
+		@apply inline-flex items-center h-20 px-1 text-sm font-medium 
+			   text-primary dark:hover:text-primary dark:text-secondary hover:text-secondary border-b-2 border-transparent
+			   hover:border-primary transition-all duration-200;
+	}
+
+	.nav-link-active {
+		@apply text-primary border-b-2 border-primary;
+	}
+
+	.btn {
+		@apply text-white px-6 py-2 rounded-lg 
+			   font-medium transition-colors duration-200 inline-flex items-center 
+			   justify-center hover:shadow-lg active:scale-95;
+	}
+
+	.btn-primary {
+		@apply btn;
+		@apply hover:bg-secondary bg-primary;
+	}
+
+	.btn-secondary {
+		@apply btn;
+		@apply bg-secondary hover:bg-primary;
+	}
+}
