@@ -131,7 +131,7 @@ export const experiences = [
 export const siteMetadata = {
 	title: 'Saied Yassin | Développeur Full-Stack',
 	description:
-		'Portfolio de Saied Yassin, développeur Full-Stack spécialisé en PHP, Symfony et React.js',
+		'Portfolio de Saied Yassin, Développeur Full-Stack spécialisé en PHP, Symfony et React.js',
 	author: 'Saied Yassin',
 	siteUrl: 'https://yassinsaied.github.io',
 	keywords: [
