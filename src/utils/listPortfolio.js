@@ -133,7 +133,7 @@ export const siteMetadata = {
 	description:
 		'Portfolio de Saied Yassin, développeur Full-Stack spécialisé en PHP, Symfony et React.js',
 	author: 'Saied Yassin',
-	siteUrl: 'https://votredomaine.com',
+	siteUrl: 'https://yassinsaied.github.io',
 	keywords: [
 		'développeur full-stack',
 		'PHP',
