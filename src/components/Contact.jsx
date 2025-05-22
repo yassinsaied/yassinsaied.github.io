@@ -101,7 +101,7 @@ export default function Contact() {
 							</div>
 							<div className="flex items-center text-zinc-500 dark:text-gray-400">
 								<FaEnvelope className="text-accent mr-3" />
-								<span>saied@yassin.com</span>
+								<span>saied.yassin@gmail.com</span>
 							</div>
 							<div className="flex items-center text-zinc-500 dark:text-gray-400">
 								<FaMapMarkerAlt className="text-accent mr-3" />
