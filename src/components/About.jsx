@@ -171,7 +171,7 @@ export default function About() {
 							</div>
 
 							{/* Name and Title */}
-							<h2 className="text-2xl font-bold mt-2 text-zinc-500 dark:text-gray-400">
+							<h2 className="text-2xl font-bold mt-2 text-primary dark:text-gray-400">
 								Saied Yassin
 							</h2>
 							<p className="text-content-secondary mb-4 text-zinc-500 dark:text-gray-400">

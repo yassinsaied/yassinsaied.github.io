@@ -62,7 +62,7 @@ export default function ContentCard({ content, type = 'project' }) {
 			<div className="p-4">
 				<div className="flex items-center mb-2">
 					{type === 'skill' && getIconForSkill(content.title)}
-					<h3 className="text-xl font-bold text-zinc-500 dark:text-white mb-3">
+					<h3 className="text-xl font-bold text-primary dark:text-white mb-3">
 						{content.title}
 					</h3>
 				</div>
