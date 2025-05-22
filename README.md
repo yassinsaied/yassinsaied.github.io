@@ -1,5 +1,7 @@
 # Portfolio - Saied Yassin
 
+## 🌐 [Voir le Portfolio](https://yassinsaied.github.io)
+
 Un portfolio moderne et responsive développé avec React et Tailwind CSS, mettant en avant mes projets et compétences en tant que développeur Full Stack.
 
 ## 🚀 Technologies Utilisées
@@ -12,11 +14,16 @@ Un portfolio moderne et responsive développé avec React et Tailwind CSS, metta
 -  EmailJS (formulaire de contact)
 -  React Icons
 -  Headless UI
+-  Vite
 
 ### Déploiement
 
--  GitHub Pages
--  Vite (bundler)
+-  GitHub Pages ([yassinsaied.github.io](https://yassinsaied.github.io))
+
+## 🔗 Liens
+
+-  Portfolio: [yassinsaied.github.io](https://yassinsaied.github.io)
+-  LinkedIn: [Saied Yassin](https://www.linkedin.com/in/saiedyassine/)
 
 ## 🛠️ Installation
 
