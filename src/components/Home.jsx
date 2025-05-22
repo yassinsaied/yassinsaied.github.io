@@ -114,7 +114,7 @@ export default function Home() {
 						className="flex gap-6 text-2xl text-gray-400"
 					>
 						<motion.a
-							href="https://github.com/yourusername"
+							href="https://github.com/yassinsaied"
 							target="_blank"
 							rel="noopener noreferrer"
 							whileHover={{ scale: 1.1, color: '#245e66' }}
@@ -124,7 +124,7 @@ export default function Home() {
 							<FaGithub />
 						</motion.a>
 						<motion.a
-							href="https://linkedin.com/in/yourusername"
+							href="https://www.linkedin.com/in/saiedyassine/"
 							target="_blank"
 							rel="noopener noreferrer"
 							whileHover={{ scale: 1.1, color: '#245e66' }}
@@ -134,7 +134,7 @@ export default function Home() {
 							<FaLinkedin />
 						</motion.a>
 						<motion.a
-							href="mailto:your.email@example.com"
+							href="mailto:saied.yassin@gmail.com"
 							whileHover={{ scale: 1.1, color: '#245e66' }}
 							whileTap={{ scale: 0.95 }}
 							className=" transition-colors duration-200"
