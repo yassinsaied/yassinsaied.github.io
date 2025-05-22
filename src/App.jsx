@@ -6,8 +6,14 @@ import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
 import SEO from './components/SEO';
+import { useEffect } from 'react';
+import emailjs from '@emailjs/browser';
 
 function App() {
+	useEffect(() => {
+		emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+	}, []);
+
 	return (
 		<>
 			<SEO />

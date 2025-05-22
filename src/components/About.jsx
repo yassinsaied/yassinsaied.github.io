@@ -59,10 +59,10 @@ export default function About() {
 							viewport={{ once: true }}
 							className=" rounded-xl p-4"
 						>
-							<motion.div variants={item} className="flex items-center">
+							<motion.div variants={item} className="flex items-center ">
 								<CgNotes
 									size={60}
-									className="text-secondary text-4xl mx-3"
+									className="text-secondary text-4xl mx-3 hidden sm:block" // Modifié ici
 								/>
 								<motion.p
 									variants={item}
@@ -77,7 +77,7 @@ export default function About() {
 						</motion.div>
 
 						{/* Experience and Education Cards in horizontal layout */}
-						<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+						<div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
 							{' '}
 							{/* Experience Card */}
 							<motion.div
@@ -120,7 +120,7 @@ export default function About() {
 								initial="hidden"
 								whileInView="show"
 								viewport={{ once: true }}
-								className="dark:glass-card glass-card-light rounded-xl p-4 h-40"
+								className="dark:glass-card glass-card-light rounded-xl p-4 h-44"
 							>
 								<motion.div
 									variants={item}
@@ -196,7 +196,7 @@ export default function About() {
 
 							{/* Download Resume Button */}
 							<motion.a
-								href="/resume.pdf"
+								href="/SaiedYassinCV.pdf"
 								download
 								className="btn-secondary"
 								whileHover={{ scale: 1.03 }}

@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import {
 	FaPhone,
@@ -8,6 +10,58 @@ import {
 } from 'react-icons/fa';
 
 export default function Contact() {
+	const [formData, setFormData] = useState({
+		name: '',
+		email: '',
+		subject: '',
+		message: '',
+	});
+
+	const [status, setStatus] = useState({
+		submitting: false,
+		success: false,
+		error: null,
+	});
+
+	const handleChange = (e) => {
+		setFormData({
+			...formData,
+			[e.target.id]: e.target.value,
+		});
+	};
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		setStatus({ submitting: true, success: false, error: null });
+
+		try {
+			await emailjs.send(
+				import.meta.env.VITE_EMAILJS_SERVICE_ID,
+				import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+				{
+					from_name: formData.name,
+					from_email: formData.email,
+					subject: formData.subject,
+					message: formData.message,
+				}
+			);
+
+			setStatus({ submitting: false, success: true, error: null });
+			setFormData({ name: '', email: '', subject: '', message: '' });
+
+			// Réinitialise le message de succès après 5 secondes
+			setTimeout(() => {
+				setStatus((prev) => ({ ...prev, success: false }));
+			}, 5000);
+		} catch (error) {
+			setStatus({
+				submitting: false,
+				success: false,
+				error: 'Une erreur est survenue. Veuillez réessayer.',
+			});
+		}
+	};
+
 	return (
 		<section id="contact" className="section-container">
 			<div className="max-w-6xl mx-auto px-4">
@@ -78,7 +132,10 @@ export default function Contact() {
 
 					{/* Colonne du formulaire */}
 					<div className="md:col-span-2">
-						<form className="dark:glass-card glass-card-light rounded-xl p-6 space-y-2">
+						<form
+							onSubmit={handleSubmit}
+							className="dark:glass-card glass-card-light rounded-xl p-6 space-y-2"
+						>
 							<div className="grid grid-cols-2 gap-4">
 								<div>
 									<label
@@ -90,7 +147,10 @@ export default function Contact() {
 									<input
 										type="text"
 										id="name"
+										value={formData.name}
+										onChange={handleChange}
 										className="form-input"
+										required
 									/>
 								</div>
 								<div>
@@ -103,10 +163,14 @@ export default function Contact() {
 									<input
 										type="email"
 										id="email"
+										value={formData.email}
+										onChange={handleChange}
 										className="form-input"
+										required
 									/>
 								</div>
 							</div>
+
 							<div>
 								<label
 									htmlFor="subject"
@@ -117,9 +181,13 @@ export default function Contact() {
 								<input
 									type="text"
 									id="subject"
+									value={formData.subject}
+									onChange={handleChange}
 									className="form-input"
+									required
 								/>
 							</div>
+
 							<div>
 								<label
 									htmlFor="message"
@@ -130,12 +198,42 @@ export default function Contact() {
 								<textarea
 									id="message"
 									rows="5"
-									className="form-input h-24 "
+									value={formData.message}
+									onChange={handleChange}
+									className="form-input h-24"
+									required
 								></textarea>
 							</div>
-							<div className="flex justify-end">
-								<button type="submit" className="btn-secondary">
-									Envoyer
+
+							<div className="flex justify-end items-center gap-4">
+								{status.success && (
+									<motion.p
+										initial={{ opacity: 0, y: 10 }}
+										animate={{ opacity: 1, y: 0 }}
+										className="text-green-500"
+									>
+										Message envoyé avec succès !
+									</motion.p>
+								)}
+								{status.error && (
+									<motion.p
+										initial={{ opacity: 0, y: 10 }}
+										animate={{ opacity: 1, y: 0 }}
+										className="text-red-500"
+									>
+										{status.error}
+									</motion.p>
+								)}
+								<button
+									type="submit"
+									disabled={status.submitting}
+									className={`btn-secondary ${
+										status.submitting
+											? 'opacity-50 cursor-not-allowed'
+											: ''
+									}`}
+								>
+									{status.submitting ? 'Envoi...' : 'Envoyer'}
 								</button>
 							</div>
 						</form>

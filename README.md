@@ -1,12 +1,36 @@
-# React + Vite
+# Portfolio - Saied Yassin
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Un portfolio moderne et responsive développé avec React et Tailwind CSS, mettant en avant mes projets et compétences en tant que développeur Full Stack.
 
-Currently, two official plugins are available:
+## 🚀 Technologies Utilisées
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Frontend
 
-## Expanding the ESLint configuration
+-  React.js
+-  Tailwind CSS
+-  Framer Motion (animations)
+-  EmailJS (formulaire de contact)
+-  React Icons
+-  Headless UI
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Déploiement
+
+-  GitHub Pages
+-  Vite (bundler)
+
+## 🛠️ Installation
+
+```bash
+# Cloner le repository
+git clone https://github.com/yassinsaied/yassinsaied.github.io.git
+
+# Installer les dépendances
+cd portfolio
+npm install
+
+# Lancer en développement
+npm run dev
+
+# Build pour production
+npm run build
+```
